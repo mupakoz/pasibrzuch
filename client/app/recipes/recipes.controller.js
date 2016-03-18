@@ -4,7 +4,7 @@
 
   class RecipesController {
     constructor() {
-      this.message = "Hello";
+      this.message = 'Hello';
     }
   }
 
@@ -12,8 +12,3 @@
     .controller('RecipesController', RecipesController);
 
 })();
-
-angular.module('pasibrzuchApp')
-  .controller('RecipesCtrl', function ($scope) {
-    $scope.message = 'Hello';
-  });
