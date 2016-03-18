@@ -1,3 +1,9 @@
+$brand-primary:         #173e43 !default;
+$brand-success:         #3fb0ac !default;
+$brand-info:            #3498DB !default;
+$brand-warning:         #fae596 !default;
+$brand-danger:          #E74C3C !default;
+
 @import "../bower_components/bootswatch-scss/flatly/variables";
 $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
 @import '../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap';
