@@ -50,9 +50,9 @@ a.navbar-logo {
   padding-top: 0px;
 }
 
-@media (min-width: 0) and (max-width: $screen-sm-max) {
+@media (min-width: 0) and (max-width: $screen-xs-max) {
   a.navbar-logo > img {
-    width: 230px;
+    width: 200px;
   }
 }
 
