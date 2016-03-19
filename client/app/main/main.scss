@@ -26,12 +26,34 @@
   margin-left: 15px;
 }
 
+//height: 400px;
+
 .main-logo {
-  height: 400px;
+  height: 200px;
+}
+
+
+@media (min-width: $screen-md-min) {
+  .main-logo {
+    height: 400px;
+  }
+}
+
+.main-logo {
+  background-image: url("../assets/images/large-logo-horizontal.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 a.navbar-logo {
   padding-top: 0px;
+}
+
+@media (min-width: 0) and (max-width: $screen-sm-max) {
+  a.navbar-logo > img {
+    width: 230px;
+  }
 }
 
 a.navbar-logo > img {

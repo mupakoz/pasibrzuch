@@ -4,6 +4,10 @@ $brand-info:            #3498DB !default;
 $brand-warning:         #fae596 !default;
 $brand-danger:          #E74C3C !default;
 
+$navbar-default-bg: $brand-success;
+$navbar-default-link-hover-color: $brand-primary;
+$navbar-default-color: $brand-warning;
+
 @import "../bower_components/bootswatch-scss/flatly/variables";
 $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
 @import '../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap';
