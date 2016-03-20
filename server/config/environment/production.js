@@ -22,5 +22,5 @@ module.exports = {
           'mongodb://localhost/pasibrzuch'
   },
 
-  seedDB: true
+  seedDB: false
 };
