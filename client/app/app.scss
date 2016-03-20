@@ -1,6 +1,6 @@
 $brand-primary:         #173e43 !default;
 $brand-success:         #3fb0ac !default;
-$brand-info:            #3498DB !default;
+$brand-info:            #5072BC !default;
 $brand-warning:         #fae596 !default;
 $brand-danger:          #E74C3C !default;
 
@@ -31,6 +31,7 @@ $fa-font-path: "../bower_components/font-awesome/fonts";
 // injector
 @import 'admin/admin.scss';
 @import 'main/main.scss';
+@import 'recipes/recipes.scss';
 @import '../components/footer/footer.scss';
 @import '../components/modal/modal.scss';
 @import '../components/oauth-buttons/oauth-buttons.scss';

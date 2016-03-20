@@ -3,8 +3,8 @@
 (function() {
 
   class RecipesController {
-    constructor() {
-      this.message = 'Hello';
+    constructor(recipesService) {
+      recipesService.getAllRecipes().then( (recipes) => this.recipes = recipes);
     }
   }
 

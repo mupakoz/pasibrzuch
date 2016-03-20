@@ -1,0 +1,27 @@
+@media (min-width: $screen-md-min) {
+  .form-inline > .form-control.search-input {
+    width: 500px;
+  }
+}
+
+@media (min-width: $screen-lg-min) {
+  .form-inline > .form-control.search-input {
+    width: 800px;
+  }
+}
+
+@media (max-width: $screen-xs-max) {
+  #recipes-buttons > button {
+    width: 100%;
+    margin-top: 1px;
+  }
+}
+
+#recipes-list > .row {
+  margin-top: 10px;
+  font-size: 1.3em;
+}
+
+#recipesAddForm ul.dropdown-menu-form {
+  overflow: auto !important;
+}

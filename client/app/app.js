@@ -9,7 +9,8 @@ angular.module('pasibrzuchApp', [
   'ngSanitize',
   'ui.router',
   'ui.bootstrap',
-  'validation.match'
+  'validation.match',
+  'angularjs-dropdown-multiselect'
 ])
   .config(function($urlRouterProvider, $locationProvider) {
     $urlRouterProvider

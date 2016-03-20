@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="row">
+    <h1>Dodaj przepis</h1>
+  </div>
+  <div class="row">
+    <form id="recipesAddForm" class="form" name="form" ng-submit="recipesAddVm.addRecipe(form)" novalidate>
+
+      <div class="form-group" ng-class="{ 'has-success': form.name.$valid && vm.submitted,
+                                            'has-error': form.name.$invalid && vm.submitted }">
+        <label>Nazwa</label>
+
+        <input type="text" name="name" class="form-control" ng-model="recipesAddVm.recipe.name"
+               required/>
+        <p class="help-block" ng-show="form.name.$error.required && recipesAddVm.submitted">
+          Nazwa jest wymagana
+        </p>
+      </div>
+
+      <div class="form-group" ng-class="{ 'has-success': form.ingredients.$valid && vm.submitted,
+                                            'has-error': form.ingredients.$invalid && vm.submitted }">
+        <label>Składniki</label>
+
+        <textarea class="form-control" name="ingredients" rows="3" data-ng-model="recipesAddVm.recipe.ingredients"
+                  placeholder="Wstaw każdy składnik w oddzielnej linii"
+                  required></textarea>
+        <p class="help-block" ng-show="form.ingredients.$error.required && recipesAddVm.submitted">
+          Składniki są wymagane
+        </p>
+      </div>
+
+      <div class="form-group" ng-class="{ 'has-success': form.description.$valid && vm.submitted,
+                                            'has-error': form.description.$invalid && vm.submitted }">
+        <label>Opis</label>
+
+        <textarea class="form-control" name="description" rows="3" data-ng-model="recipesAddVm.recipe.description"></textarea>
+      </div>
+
+      <div class="form-group" ng-class="{ 'has-success': form.categories.$valid && vm.submitted,
+                                            'has-error': form.categories.$invalid && vm.submitted }">
+        <label>Kategorie</label>
+
+        <div ng-dropdown-multiselect=""
+             data-translation-texts="recipesAddVm.translationTexts"
+             data-extra-settings="{showCheckAll: false, showUncheckAll: false}"
+             options="recipesAddVm.categories" selected-model="recipesAddVm.recipe.categories"></div>
+
+      </div>
+
+      <div>
+        <button class="btn btn-inverse btn-info btn-block" type="submit">
+          <i class="fa fa-plus"></i> Dodaj przepis
+        </button>
+      </div>
+
+      <hr/>
+    </form>
+  </div>
+</div>
