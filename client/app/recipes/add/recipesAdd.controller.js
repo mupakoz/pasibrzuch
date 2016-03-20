@@ -3,7 +3,7 @@
 (function () {
 
   class RecipesAddController {
-
+    //start-non-standard
     recipe = {
       categories: []
     };
@@ -14,6 +14,7 @@
       buttonDefaultText: 'Wybierz kategorie',
       dynamicButtonTextSuffix: 'kategorie zostały wybrane'
     };
+    //end-non-standard
 
     constructor(recipesService, $location) {
       this.message = 'Hello';
@@ -26,7 +27,7 @@
       this.submitted = true;
 
       if (form.$valid) {
-        this.recipe.ingredients = this.recipe.ingredients.split("\n");
+        this.recipe.ingredients = this.recipe.ingredients.split('\n');
         this.recipe.categories = _.map(this.recipe.categories, c => c.id);
         this.recipesService.addRecipe(this.recipe).then(() =>
           this.$location.path('/recipes')

@@ -10,7 +10,7 @@
     }
 
     getAllRecipes() {
-      return this.$http.get('/api/recipes').then(res => { return res.data });
+      return this.$http.get('/api/recipes').then(res => { return res.data; });
     }
 
     getCategories() {
