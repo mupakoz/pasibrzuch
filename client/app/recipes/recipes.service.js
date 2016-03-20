@@ -10,24 +10,7 @@
     }
 
     getAllRecipes() {
-      var deferred = this.$q.defer();
-      deferred.resolve(
-        [
-          {
-            name: 'Kanapki z orzeźwiającym serkiem i orzechami',
-            categories: ['Śniadanie']
-          },
-          {
-            name: 'Kasza jaglana ze szparagami, suszonymi pomidorami i fetą',
-            categories: ['Obiad']
-          },
-          {
-            name: 'Koktajl truskawkowy',
-            categories: ['Podwieczorek']
-          }
-        ]
-      );
-      return deferred.promise;
+      return this.$http.get('/api/recipes').then(res => { return res.data });
     }
 
     getCategories() {

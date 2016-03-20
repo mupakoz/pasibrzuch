@@ -10,6 +10,15 @@ function handleError(res, statusCode) {
   };
 }
 
+function respondWithResult(res, statusCode) {
+  statusCode = statusCode || 200;
+  return function(entity) {
+    if (entity) {
+      res.status(statusCode).json(entity);
+    }
+  };
+}
+
 export function categories(req, res) {
   var userId = req.user._id;
 
@@ -34,4 +43,18 @@ export function create(req, res) {
 
     })
     .catch(handleError(res));
+}
+
+export function findAll(req, res) {
+  var userId = req.user._id;
+
+  return User
+    .findById(userId)
+    .populate('recipes')
+    .select('recipes')
+    .then(function (userWithRecipes) {
+      console.log(userWithRecipes);
+      res.status(200).json(userWithRecipes.recipes);
+    })
+    .catch(handleError(res))
 }
