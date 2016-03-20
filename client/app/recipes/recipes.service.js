@@ -4,8 +4,9 @@
 
   class RecipesService {
 
-    constructor($q) {
+    constructor($q, $http) {
       this.$q = $q;
+      this.$http = $http;
     }
 
     getAllRecipes() {
@@ -37,10 +38,14 @@
           {id: 'Drugie śniadanie', label: 'Drugie śniadanie'},
           {id: 'Obiad', label: 'Obiad'},
           {id: 'Podwieczorek', label: 'Podwieczorek'},
-          {id: 'Kolacja', label: 'Kolacja'}
+          {id: 'Kolacja', label: 'costam'}
         ]
       );
       return deferred.promise;
+    }
+
+    addRecipe(recipe) {
+      return this.$http.post('/api/recipes', recipe);
     }
   }
 

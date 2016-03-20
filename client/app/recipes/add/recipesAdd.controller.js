@@ -18,6 +18,7 @@
     constructor(recipesService, $location) {
       this.message = 'Hello';
       this.$location = $location;
+      this.recipesService = recipesService;
       recipesService.getCategories().then(categories => this.categories = categories);
     }
 
@@ -25,9 +26,11 @@
       this.submitted = true;
 
       if (form.$valid) {
-        alert('Dodam usera!');
-        console.log(this.recipe);
-        this.$location.path('/recipes');
+        this.recipe.ingredients = this.recipe.ingredients.split("\n");
+        this.recipe.categories = _.map(this.recipe.categories, c => c.id);
+        this.recipesService.addRecipe(this.recipe).then(() =>
+          this.$location.path('/recipes')
+        );
       }
     }
   }
