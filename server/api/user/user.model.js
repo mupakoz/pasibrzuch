@@ -22,7 +22,12 @@ var UserSchema = new Schema({
   salt: String,
   facebook: {},
   google: {},
-  github: {}
+  github: {},
+  recipes: [{ type: Schema.Types.ObjectId, ref: 'Recipe' }],
+  categories: {
+    type: [String],
+    default: ['Śniadanie', 'Drugie śniadanie', 'Obiad', 'Podwieczorek', 'Kolacja']
+  }
 });
 
 /**
